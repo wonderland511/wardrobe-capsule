@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<title>Гардероб и капсулы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ee;--paper:#fffdf9;--ink:#1b1a18;--muted:#6f6a62;--line:#e3ddd3;--accent:#1b1a18;--soft:#ece6dc;--done:#a39d93}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--paper:#1b1a18;--ink:#f1ece4;--muted:#a39d93;--line:#2f2c28;--accent:#f1ece4;--soft:#26231f;--done:#6f6a62}}
+:root[data-theme="dark"]{--bg:#121110;--paper:#1b1a18;--ink:#f1ece4;--muted:#a39d93;--line:#2f2c28;--accent:#f1ece4;--soft:#26231f;--done:#6f6a62}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 80px}
+header.hero{padding:56px 0 28px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:500;margin:0}
+h1{font-size:clamp(40px,8vw,68px);line-height:1;margin:10px 0 14px}
+.hero p{max-width:640px;color:var(--muted);margin:0}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto;padding:10px 0}
+nav a{flex:none;color:var(--ink);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line)}
+nav a:hover{background:var(--soft)}
+section.block{padding:40px 0 8px}
+h2{font-size:36px;margin-bottom:6px}
+.lead{color:var(--muted);margin:0 0 22px;max-width:680px}
+.palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:8px 0 26px}
+.sw{background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:12px}
+.sw i{display:block;height:54px}
+.sw span{display:block;padding:7px 10px}
+.sw b{display:block;font-weight:600}
+table{width:100%;border-collapse:collapse;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-size:14px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--soft)}
+tr:last-child td{border-bottom:0}
+.tablewrap{overflow-x:auto}
+.rule{margin:18px 0 0;padding:14px 16px;border-left:2px solid var(--ink);background:var(--paper)}
+.capsule{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:16px}
+.cap-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:16px}
+.cap-num{font-family:"Cormorant Garamond",serif;font-size:42px;line-height:1;color:var(--muted)}
+.cap-head h3{font-size:28px}
+.cap-head p{margin:4px 0 0;color:var(--muted)}
+.cap-body{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+h4{margin:0 0 10px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.chips li{font-size:13px;padding:5px 10px;border-radius:999px;background:var(--soft)}
+.looks{margin:0;padding-left:20px}
+.looks li{margin-bottom:7px}
+.progress{display:flex;align-items:center;gap:14px;margin:0 0 20px}
+.bar{flex:1;height:4px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .3s}
+.count{font-size:13px;color:var(--muted);white-space:nowrap}
+.groups{columns:2 320px;column-gap:20px}
+.group{break-inside:avoid;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.group h3{font-size:22px;margin-bottom:8px}
+.checks{list-style:none;margin:0;padding:0}
+.checks li{border-bottom:1px solid var(--line)}
+.checks li:last-child{border-bottom:0}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:8px 0;cursor:pointer}
+.checks input{appearance:none;flex:none;width:18px;height:18px;margin-top:2px;border:1.5px solid var(--ink);border-radius:4px;display:grid;place-items:center;cursor:pointer}
+.checks input:checked{background:var(--ink)}
+.checks input:checked::after{content:"";width:5px;height:9px;border:solid var(--bg);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.checks input:checked+span{color:var(--done);text-decoration:line-through}
+.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.tip{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+.tip b{display:block;font-family:"Cormorant Garamond",serif;font-size:20px;font-weight:500;margin-bottom:4px}
+.tip p{margin:0;color:var(--muted);font-size:14px}
+footer{margin-top:40px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+button.reset{background:none;border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:5px 12px;font:inherit;cursor:pointer}
+.sticker{float:right;width:96px;height:96px;margin:-4px -2px 8px 12px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 14px rgba(0,0,0,.18);object-fit:cover;transform:rotate(6deg);transition:transform .25s}
+.sticker:hover{transform:rotate(-4deg) scale(1.06)}
+footer .credit{flex-basis:100%;font-size:11px}
+footer .credit a{color:inherit}
+@media (prefers-reduced-motion:reduce){.sticker,.sticker:hover{transition:none;transform:rotate(6deg)}}
+@media (max-width:680px){.cap-body{grid-template-columns:1fr}h2{font-size:30px}.capsule{padding:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Личный гардероб · осень 2026</div>
+  <h1>Гардероб<br>и капсулы</h1>
+  <p>Днём — скандинавско-парижский минимализм и «тихая роскошь»: оверсайз-блейзеры, джинсы, тонкий трикотаж. Вечером — чёрный секси-тейлоринг в духе YSL: смокинги, кружево, вырезы.</p>
+</header>
+<nav>
+  <a href="#style">Стиль</a><a href="#capsules">Капсулы</a><a href="#checklist">Чек-лист</a><a href="#rules">Правила</a>
+</nav>
+
+<section class="block" id="style">
+  <h2>Палитра и размеры</h2>
+  <p class="lead">Основа — серый, тёмно-синий, чёрный и молочный. Мокко и шоколад — вторая линия, красный, бордо и леопард — по одному акценту в образе.</p>
+  <div class="palette">
+    <div class="sw"><i style="background:#8c8c8a"></i><span><b>Серый меланж</b>основа</span></div>
+    <div class="sw"><i style="background:#1f2a44"></i><span><b>Тёмно-синий</b>основа</span></div>
+    <div class="sw"><i style="background:#141414"></i><span><b>Чёрный</b>основа, вечер</span></div>
+    <div class="sw"><i style="background:#f3ede1"></i><span><b>Молочный</b>основа</span></div>
+    <div class="sw"><i style="background:#8a7564"></i><span><b>Мокко, тауп</b>вторая линия</span></div>
+    <div class="sw"><i style="background:#4a3226"></i><span><b>Шоколад</b>вторая линия</span></div>
+    <div class="sw"><i style="background:#5b5e3c"></i><span><b>Оливковый</b>вторая линия</span></div>
+    <div class="sw"><i style="background:#b3242b"></i><span><b>Красный</b>акцент</span></div>
+    <div class="sw"><i style="background:#5e1a24"></i><span><b>Бордо</b>акцент</span></div>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>Вещь</th><th>Размер</th><th>На что смотреть</th></tr></thead>
+    <tbody><tr><td>Блейзеры, пальто оверсайз</td><td>M–L</td><td>Плечо спущено на 3–5 см, рукав до середины ладони</td></tr><tr><td>Свитера, кардиганы</td><td>M (мохер — L)</td><td>Не длиннее середины бедра</td></tr><tr><td>Рубашки</td><td>мужские S–M или женские L</td><td>Можно заправлять спереди</td></tr><tr><td>Брюки, джинсы, юбки, шорты</td><td>свой (W26–27)</td><td>Длина 32–34&quot; или линейка tall</td></tr><tr><td>Смокинг</td><td>свой или +1</td><td>Пиджак свободный, брюки строго по талии</td></tr><tr><td>Боди, корсеты, водолазки, платья по фигуре</td><td>свой</td><td>Без складок на талии</td></tr></tbody>
+  </table></div>
+  <p class="rule">База S / EU 36 / RU 44, рост 173. Объём уравновешивается прилегающей вещью: оверсайз-жакет — поверх боди, корсета или облегающего топа, талия — ремнём или заправкой.</p>
+</section>
+
+<section class="block" id="capsules">
+  <h2>Капсулы для сбора образов</h2>
+  <p class="lead">Пять капсул под разные сценарии. Вещи внутри капсулы сочетаются между собой, многие переходят из одной капсулы в другую.</p>
+  <article class="capsule"><div class="cap-head"><span class="cap-num">01</span><div><h3>Будни и офис</h3><p>Строгая база в сером, тёмно-синем и чёрном. 16 вещей дают больше 25 образов.</p></div></div>
+<div class="cap-body"><div><h4>Вещи</h4><ul class="chips"><li>Серый оверсайз-блейзер</li><li>Чёрный оверсайз-блейзер</li><li>Тёмно-синий блейзер в полоску</li><li>Белая рубашка оверсайз</li><li>Голубая рубашка</li><li>Серый тонкий свитер</li><li>Тёмно-синий тонкий свитер</li><li>Белая футболка</li><li>Чёрные широкие брюки</li><li>Серые широкие брюки</li><li>Юбка-карандаш в полоску</li><li>Прямые голубые джинсы</li><li>Чёрные лоферы</li><li>Туфли с острым носом, чёрный лак</li><li>Чёрный тоут</li><li>Коричневый ремень</li></ul></div><div><h4>Образы</h4><ol class="looks"><li>Серый блейзер, серый свитер, серые брюки, лоферы — тотал-грей</li><li>Чёрный блейзер, голубая рубашка, джинсы, туфли с острым носом</li><li>Блейзер в полоску, белая футболка, юбка-карандаш, лоферы</li><li>Тёмно-синий свитер, чёрные брюки, туфли, тоут</li><li>Белая рубашка, серые брюки, ремень, лоферы</li><li>Серый блейзер на плечах, тёмно-синий свитер, юбка-карандаш, туфли</li></ol></div></div></article><article class="capsule"><div class="cap-head"><span class="cap-num">02</span><div><h3>Выходные и город</h3><p>Джинсы, мягкий трикотаж и один яркий акцент.</p></div></div>
+<div class="cap-body"><div><h4>Вещи</h4><ul class="chips"><li>Прямые голубые джинсы</li><li>Средне-синие джинсы</li><li>Белые футболки</li><li>Серый лонгслив</li><li>Мохеровый кардиган, тауп</li><li>Красный кардиган</li><li>Свитер мокко</li><li>Тёмно-синие атласные брюки</li><li>Шоколадная кожаная куртка</li><li>Ретро-кеды</li><li>Леопардовые балетки</li><li>Сумка-хобо из замши</li><li>Чёрные очки</li></ul></div><div><h4>Образы</h4><ol class="looks"><li>Красный кардиган, белая футболка, голубые джинсы, леопардовые балетки, очки</li><li>Мохеровый кардиган на голое тело или на майку, джинсы, кеды, хобо</li><li>Свитер мокко, тёмно-синие атласные брюки, балетки, хобо</li><li>Кожаная куртка, серый лонгслив, средне-синие джинсы, кеды</li><li>Белая футболка, джинсы, коричневый ремень, очки — классика 90-х</li><li>Красный свитер на плечах, белая футболка, джинсы, кеды</li></ol></div></div></article><article class="capsule"><div class="cap-head"><span class="cap-num">03</span><div><h3>Вечер YSL</h3><p>Чёрный тейлоринг и открытое тело под ним. Сексуальность через фактуру, а не длину.</p></div></div>
+<div class="cap-body"><div><h4>Вещи</h4><ul class="chips"><li>Смокинг-блейзер</li><li>Брюки к смокингу с лампасом</li><li>Чёрный оверсайз-блейзер</li><li>Юбка-карандаш с высоким разрезом</li><li>Кружевное боди с длинным рукавом</li><li>Кружевной корсет</li><li>Прозрачная шифоновая блуза</li><li>Кружевной бра-топ</li><li>Чёрная атласная рубашка</li><li>Платье с открытой спиной</li><li>Шпильки с острым носом</li><li>Клатч под крокодила</li><li>Крупные золотые серьги</li><li>Колготки 10 den</li></ul></div><div><h4>Образы</h4><ol class="looks"><li>Смокинг на кружевное боди, брюки с лампасом в пол, шпильки, серьги</li><li>Шифоновая блуза поверх бра-топа, юбка с разрезом, колготки 10 den, шпильки</li><li>Оверсайз-блейзер на голое тело, на одну пуговицу, брюки с лампасом, клатч</li><li>Атласная рубашка, расстёгнутая до кружевного бра, широкие брюки, шпильки</li><li>Платье с открытой спиной, смокинг на плечах, гладкий пучок, красная помада</li><li>Корсет, оверсайз-блейзер, широкие чёрные брюки, клатч под крокодила</li></ol></div></div></article><article class="capsule"><div class="cap-head"><span class="cap-num">04</span><div><h3>Холодный сезон</h3><p>Москва с ноября по март: слои, шерсть, закрытая обувь.</p></div></div>
+<div class="cap-body"><div><h4>Вещи</h4><ul class="chips"><li>Длинное пальто оверсайз</li><li>Короткий шерстяной бушлат</li><li>Стёганый жилет</li><li>Чёрная водолазка</li><li>Серая водолазка</li><li>Серый джемпер на молнии</li><li>Пушистая безрукавка</li><li>Серые шерстяные брюки</li><li>Тёмные джинсы клёш</li><li>Кожаная юбка-миди</li><li>Сапоги с острым носом</li><li>Лоферы</li><li>Кашемировый палантин</li><li>Большой тоут</li></ul></div><div><h4>Образы</h4><ol class="looks"><li>Длинное пальто, серая водолазка, серые брюки, лоферы, палантин</li><li>Бушлат, чёрная водолазка, кожаная юбка-миди, сапоги</li><li>Жилет поверх серого джемпера на молнии, джинсы клёш, сапоги</li><li>Пушистая безрукавка на водолазку, серые брюки, лоферы, тоут</li><li>Длинное пальто, чёрная водолазка, джинсы клёш, сапоги</li><li>Бушлат, серый джемпер, кожаная юбка, лоферы с серыми носками</li></ol></div></div></article><article class="capsule"><div class="cap-head"><span class="cap-num">05</span><div><h3>Лето и отпуск</h3><p>Белый, молочный и тёмно-синий, лён и атлас.</p></div></div>
+<div class="cap-body"><div><h4>Вещи</h4><ul class="chips"><li>Белые майки-борцовки</li><li>Чёрная майка</li><li>Белая футболка</li><li>Голубая рубашка</li><li>Молочный блейзер</li><li>Белые льняные брюки</li><li>Тёмно-синие бермуды</li><li>Белые бермуды</li><li>Атласная юбка-комбинация</li><li>Белое платье-миди</li><li>Молочное мини-платье</li><li>Плоские сандалии</li><li>Красные босоножки</li><li>Соломенная сумка</li><li>Очки «кошачий глаз»</li></ul></div><div><h4>Образы</h4><ol class="looks"><li>Белая майка, белые льняные брюки, сандалии, соломенная сумка</li><li>Молочный блейзер, белая майка, белые бермуды, босоножки</li><li>Чёрная майка, атласная юбка, плоские сандалии, золотые серьги</li><li>Голубая рубашка навыпуск, тёмно-синие бермуды, сандалии</li><li>Белое платье-миди, соломенная сумка, очки</li><li>Молочное мини-платье, красные босоножки, чёрная сумка</li></ol></div></div></article>
+</section>
+
+<section class="block" id="checklist">
+  <h2>Чек-лист покупок</h2>
+  <p class="lead">Отмечайте купленное — отметки сохраняются в этом браузере. То, что у вас уже есть, отмечено заранее.</p>
+  <div class="progress"><div class="bar"><i id="bar"></i></div><span class="count" id="count">0 / 98</span></div>
+  <div class="groups"><section class="group"><h3>Верхняя одежда</h3><ul class="checks"><li><label><input type="checkbox" data-id="c1"><span>Длинное пальто оверсайз, серое или чёрное</span></label></li><li><label><input type="checkbox" data-id="c2"><span>Короткое шерстяное пальто-бушлат, графит или чёрный</span></label></li><li><label><input type="checkbox" data-id="c3"><span>Тренч или лёгкое пальто, молочный</span></label></li><li><label><input type="checkbox" data-id="c4"><span>Кожаная куртка или бомбер, шоколад</span></label></li><li><label><input type="checkbox" data-id="c5" data-own><span>Стёганый жилет, чёрный</span></label></li></ul></section><section class="group"><h3>Блейзеры</h3><ul class="checks"><li><label><input type="checkbox" data-id="c6"><span>Оверсайз-блейзер, серый</span></label></li><li><label><input type="checkbox" data-id="c7"><span>Оверсайз-блейзер, чёрный</span></label></li><li><label><input type="checkbox" data-id="c8"><span>Блейзер в тонкую полоску, тёмно-синий</span></label></li><li><label><input type="checkbox" data-id="c9"><span>Блейзер в ёлочку или твид, бежево-серый</span></label></li><li><label><input type="checkbox" data-id="c10"><span>Блейзер шоколадный или оливковый</span></label></li><li><label><input type="checkbox" data-id="c11"><span>Блейзер молочный, на лето</span></label></li><li><label><input type="checkbox" data-id="c12" data-own><span>Смокинг-блейзер с атласными лацканами</span></label></li><li><label><input type="checkbox" data-id="c13" data-own><span>Приталенный жакет айвори</span></label></li></ul></section><section class="group"><h3>Трикотаж</h3><ul class="checks"><li><label><input type="checkbox" data-id="c14"><span>Тонкие свитера с круглым вырезом: серый меланж, тёмно-синий, мокко</span></label></li><li><label><input type="checkbox" data-id="c15"><span>Объёмный кардиган из мохера или альпаки, серый или тауп</span></label></li><li><label><input type="checkbox" data-id="c16"><span>Трикотажное поло с коротким рукавом, тёмно-синее или чёрное</span></label></li><li><label><input type="checkbox" data-id="c17"><span>Свитер с V-вырезом, чёрный</span></label></li><li><label><input type="checkbox" data-id="c18"><span>Кашемировый джемпер с коротким рукавом, мокко</span></label></li><li><label><input type="checkbox" data-id="c19"><span>Кардиган или свитер, красный (акцент)</span></label></li><li><label><input type="checkbox" data-id="c20"><span>Пушистая безрукавка, серая</span></label></li><li><label><input type="checkbox" data-id="c21"><span>Водолазки: чёрная и серая</span></label></li><li><label><input type="checkbox" data-id="c22" data-own><span>Серый джемпер на молнии</span></label></li></ul></section><section class="group"><h3>Футболки, рубашки, дневные топы</h3><ul class="checks"><li><label><input type="checkbox" data-id="c23"><span>Белые плотные футболки, 3–4 шт.</span></label></li><li><label><input type="checkbox" data-id="c24"><span>Лонгсливы: белый и серый</span></label></li><li><label><input type="checkbox" data-id="c25"><span>Майки-борцовки: белая, чёрная, серая</span></label></li><li><label><input type="checkbox" data-id="c26"><span>Рубашка голубая, мужской крой</span></label></li><li><label><input type="checkbox" data-id="c27"><span>Рубашка в синюю полоску</span></label></li><li><label><input type="checkbox" data-id="c28"><span>Белая рубашка оверсайз</span></label></li><li><label><input type="checkbox" data-id="c29"><span>Боди с длинным рукавом: чёрное и шоколадное</span></label></li><li><label><input type="checkbox" data-id="c30"><span>Атласный топ айвори с драпировкой</span></label></li></ul></section><section class="group"><img class="sticker" src="img/cat.jpg" width="96" height="96" alt="Милый котик спит в шкафу на стопке джинсов"><h3>Брюки и джинсы</h3><ul class="checks"><li><label><input type="checkbox" data-id="c31"><span>Прямые джинсы, светло-голубые</span></label></li><li><label><input type="checkbox" data-id="c32"><span>Прямые джинсы, средне-синие</span></label></li><li><label><input type="checkbox" data-id="c33"><span>Тёмные джинсы клёш</span></label></li><li><label><input type="checkbox" data-id="c34" data-own><span>Широкие брюки со стрелками, чёрные</span></label></li><li><label><input type="checkbox" data-id="c35"><span>Широкие брюки со стрелками, серые</span></label></li><li><label><input type="checkbox" data-id="c36"><span>Широкие брюки со стрелками, тёмно-синие</span></label></li><li><label><input type="checkbox" data-id="c37"><span>Атласные широкие брюки, шампань или тёмно-синие</span></label></li><li><label><input type="checkbox" data-id="c38"><span>Брюки клёш по фигуре, чёрные</span></label></li><li><label><input type="checkbox" data-id="c39"><span>Белые широкие брюки, лён или плотный хлопок</span></label></li></ul></section><section class="group"><h3>Юбки, шорты, дневные платья</h3><ul class="checks"><li><label><input type="checkbox" data-id="c40"><span>Юбка-карандаш миди с разрезом, тёмно-синяя в полоску</span></label></li><li><label><input type="checkbox" data-id="c41"><span>Кожаная юбка-миди, гладкая или под крокодила</span></label></li><li><label><input type="checkbox" data-id="c42"><span>Мини-юбка из костюмной ткани, серая</span></label></li><li><label><input type="checkbox" data-id="c43"><span>Атласная юбка-комбинация, миди или макси</span></label></li><li><label><input type="checkbox" data-id="c44"><span>Бермуды: тёмно-синие и белые</span></label></li><li><label><input type="checkbox" data-id="c45"><span>Белое платье-миди</span></label></li><li><label><input type="checkbox" data-id="c46"><span>Структурное мини-платье прямого кроя, молочное</span></label></li><li><label><input type="checkbox" data-id="c47"><span>Трикотажное платье-миди с коротким рукавом, чёрное</span></label></li></ul></section><section class="group"><h3>Вечер YSL: костюмы</h3><ul class="checks"><li><label><input type="checkbox" data-id="c48"><span>Брюки к смокингу с атласным лампасом</span></label></li><li><label><input type="checkbox" data-id="c49"><span>Чёрный двубортный костюм с острыми плечами</span></label></li><li><label><input type="checkbox" data-id="c50"><span>Жакет-смокинг, приталенный, на одну пуговицу</span></label></li><li><label><input type="checkbox" data-id="c51"><span>Чёрная юбка-карандаш миди с высоким разрезом</span></label></li></ul></section><section class="group"><h3>Вечер YSL: кружево, прозрачность, вырезы</h3><ul class="checks"><li><label><input type="checkbox" data-id="c52"><span>Кружевное боди с длинным рукавом, чёрное</span></label></li><li><label><input type="checkbox" data-id="c53"><span>Кружевное боди на бретелях с глубоким V-вырезом</span></label></li><li><label><input type="checkbox" data-id="c54" data-own><span>Корсет с кружевом, чёрный</span></label></li><li><label><input type="checkbox" data-id="c55"><span>Атласный корсет-бюстье, чёрный</span></label></li><li><label><input type="checkbox" data-id="c56"><span>Прозрачная шифоновая блуза с бантом или воротником</span></label></li><li><label><input type="checkbox" data-id="c57"><span>Чёрная водолазка-сетка</span></label></li><li><label><input type="checkbox" data-id="c58"><span>Кружевной бра-топ или бралетт</span></label></li><li><label><input type="checkbox" data-id="c59"><span>Атласная рубашка, чёрная</span></label></li><li><label><input type="checkbox" data-id="c60"><span>Платье-миди с открытой спиной или вырезом на талии</span></label></li><li><label><input type="checkbox" data-id="c61"><span>Платье на одно плечо, чёрное</span></label></li><li><label><input type="checkbox" data-id="c62"><span>Платье-комбинация с V-вырезом, чёрный атлас</span></label></li><li><label><input type="checkbox" data-id="c63"><span>Топ-халтер или асимметричный</span></label></li><li><label><input type="checkbox" data-id="c64"><span>Боди с открытыми плечами</span></label></li><li><label><input type="checkbox" data-id="c65"><span>Тонкие чёрные колготки 10–15 den</span></label></li><li><label><input type="checkbox" data-id="c66"><span>Красная или винная помада</span></label></li></ul></section><section class="group"><h3>Обувь</h3><ul class="checks"><li><label><input type="checkbox" data-id="c67"><span>Лоферы на толстой подошве, чёрные</span></label></li><li><label><input type="checkbox" data-id="c68"><span>Туфли с острым носом, чёрный лак</span></label></li><li><label><input type="checkbox" data-id="c69"><span>Туфли с острым носом, шоколадная замша</span></label></li><li><label><input type="checkbox" data-id="c70"><span>Шпильки 9–10 см, чёрная замша или лак</span></label></li><li><label><input type="checkbox" data-id="c71"><span>Босоножки на тонких ремешках, чёрные</span></label></li><li><label><input type="checkbox" data-id="c72"><span>Слингбэки бежевые с чёрным носом</span></label></li><li><label><input type="checkbox" data-id="c73"><span>Балетки леопардовые или с острым носом</span></label></li><li><label><input type="checkbox" data-id="c74"><span>Мэри Джейн, оливковые или чёрные</span></label></li><li><label><input type="checkbox" data-id="c75"><span>Сапоги или ботильоны с острым носом, чёрные</span></label></li><li><label><input type="checkbox" data-id="c76"><span>Ретро-кеды белые</span></label></li><li><label><input type="checkbox" data-id="c77"><span>Ретро-кеды яркие (например, жёлтые)</span></label></li><li><label><input type="checkbox" data-id="c78"><span>Сандалии или шлёпанцы на плоской подошве</span></label></li></ul></section><section class="group"><h3>Сумки</h3><ul class="checks"><li><label><input type="checkbox" data-id="c79"><span>Большая мягкая кожаная сумка-тоут, чёрная</span></label></li><li><label><input type="checkbox" data-id="c80"><span>Замшевая сумка-хобо, коричневая</span></label></li><li><label><input type="checkbox" data-id="c81"><span>Плетёная кожаная сумка, шоколад</span></label></li><li><label><input type="checkbox" data-id="c82"><span>Большой тоут, тауп или серо-бежевый</span></label></li><li><label><input type="checkbox" data-id="c83"><span>Структурная сумка, бордо</span></label></li><li><label><input type="checkbox" data-id="c84"><span>Соломенная сумка, на лето</span></label></li><li><label><input type="checkbox" data-id="c85"><span>Клатч-конверт, чёрный</span></label></li><li><label><input type="checkbox" data-id="c86" data-own><span>Маленькая лаковая сумка на короткой ручке, чёрная</span></label></li><li><label><input type="checkbox" data-id="c87" data-own><span>Клатч под крокодила, чёрный</span></label></li><li><label><input type="checkbox" data-id="c88" data-own><span>Плетёная коричневая сумка на плечо</span></label></li></ul></section><section class="group"><h3>Аксессуары</h3><ul class="checks"><li><label><input type="checkbox" data-id="c89"><span>Ремень коричневый с золотой пряжкой</span></label></li><li><label><input type="checkbox" data-id="c90"><span>Ремень чёрный, тонкий</span></label></li><li><label><input type="checkbox" data-id="c91"><span>Очки: крупные чёрные овальные</span></label></li><li><label><input type="checkbox" data-id="c92"><span>Очки: узкие «кошачий глаз»</span></label></li><li><label><input type="checkbox" data-id="c93"><span>Крупные золотые серьги: капли, кольца или скульптурные</span></label></li><li><label><input type="checkbox" data-id="c94"><span>Широкий золотой браслет</span></label></li><li><label><input type="checkbox" data-id="c95" data-own><span>Стальные часы, пусеты, тонкая цепочка с кулоном</span></label></li><li><label><input type="checkbox" data-id="c96"><span>Серые носки под лоферы</span></label></li><li><label><input type="checkbox" data-id="c97"><span>Крабы и шпильки для пучка</span></label></li><li><label><input type="checkbox" data-id="c98"><span>Кашемировый палантин, серый или молочный</span></label></li></ul></section></div>
+</section>
+
+<section class="block" id="rules">
+  <h2>Правила стиля</h2>
+  <p class="lead">Коротко о том, что делает образ дорогим.</p>
+  <div class="tips">
+    <div class="tip"><b>Монохром</b><p>Один цвет с головы до ног, но разные фактуры: серый мохер, серая шерсть, серые носки. При росте 173 это ещё и вытягивает силуэт.</p></div>
+    <div class="tip"><b>Объём + опора</b><p>Если верх оверсайз, низ прямой или по фигуре, а под жакетом — гладкий облегающий слой.</p></div>
+    <div class="tip"><b>Один акцент</b><p>Красный кардиган, или сумка бордо, или леопардовые балетки. Остальное нейтральное.</p></div>
+    <div class="tip"><b>Одна открытая зона</b><p>Вечером — глубокий вырез, или спина, или ноги в разрезе. Две — максимум, если всё остальное закрыто и чёрное.</p></div>
+    <div class="tip"><b>Прозрачное под строгое</b><p>Кружево и сетку прячьте под смокинг или оверсайз-жакет, днём в одиночку их не носите.</p></div>
+    <div class="tip"><b>Длина брюк</b><p>Широкие брюки и брюки смокинга — почти в пол, с каблуком. Ищите длину 32–34" или линейки tall.</p></div>
+    <div class="tip"><b>Волосы и макияж</b><p>Гладкий пучок, зализанный хвост, французская закрутка. Красные губы или дымчатые глаза — не всё сразу.</p></div>
+    <div class="tip"><b>Металлы</b><p>Стальные часы плюс пара крупных золотых акцентов — осознанный микс, это современно.</p></div>
+  </div>
+</section>
+
+<footer><span>Гардероб и капсулы · 2026</span><button class="reset" id="reset">Сбросить отметки</button><span class="credit">Фото котика: <a href="https://commons.wikimedia.org/wiki/File:Charlie_the_cat_-_in_the_closet.jpg" rel="noopener">Yuval Y, Wikimedia Commons</a>, CC BY-SA 3.0</span></footer>
+</div>
+<script>
+(function(){
+  var KEY="wardrobe-checks-v1", state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||"{}")||{}}catch(e){state={}}
+  var boxes=[].slice.call(document.querySelectorAll('.checks input'));
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  function update(){var n=boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('count').textContent=n+" / "+boxes.length;
+    document.getElementById('bar').style.width=(100*n/boxes.length)+"%";}
+  boxes.forEach(function(b){var id=b.dataset.id;
+    b.checked = (id in state) ? state[id] : b.hasAttribute('data-own');
+    b.addEventListener('change',function(){state[id]=b.checked;save();update();});});
+  document.getElementById('reset').addEventListener('click',function(){
+    state={};save();boxes.forEach(function(b){b.checked=b.hasAttribute('data-own')});update();});
+  update();
+})();
+</script>
+<script type="module">
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+  import("https://cdn.jsdelivr.net/npm/motion@11.18.2/+esm").then(function(m){
+    m.inView(".capsule, .group, .tip, .palette, .tablewrap",function(el){
+      m.animate(el,{opacity:[0.4,1],y:[14,0]},{duration:0.5,ease:"easeOut"});
+    },{amount:0.15});
+  }).catch(function(){});
+}
+</script>
+</body>
+</html>
